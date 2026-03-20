@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 20% 30%, #1e3a8a, #0f172a 70%);
+  height: 100vh;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(59, 130, 246, 0.3);
+  filter: blur(120px);
+  top: -100px;
+  left: -100px;
+  z-index: 0;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* POPUP SCROLL FIX */
+.popup .container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.5),
+    0 0 25px rgba(30, 58, 138, 0.6);
+
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.popup .container::-webkit-scrollbar {
+  width: 6px;
+}
+.popup .container::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  border-radius: 10px;
+}
+
+.popup .content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 280px;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.5),
+    0 0 25px rgba(30, 58, 138, 0.6);
+}
+
+.popup h2 {
+  font-family: 'Pacifico', cursive;
+  color: #1e3a8a;
+}
+
+/* PAGE */
+.page {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.page.active {
+  display: flex;
+}
+
+/* CONTAINER */
+.container {
+  background: white;
+  color: #0f172a;
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.container:hover {
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.4),
+    0 0 15px rgba(30, 58, 138, 0.6),
+    0 0 30px rgba(30, 58, 138, 0.4);
+}
+
+.container::before {
+  content: "💙";
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  font-size: 22px;
+}
+.container::after {
+  content: "💙";
+  position: absolute;
+  bottom: -12px;
+  left: -10px;
+  font-size: 22px;
+}
+
+/* INPUT */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #1e3a8a;
+  color: white;
+  cursor: pointer;
+}
+
+/* GALERI */
+.gallery-scroll {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* FOTO */
+.polaroid {
+  background: white;
+  padding: 10px;
+  margin: 20px auto;
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  position: relative;
+
+  animation: float 4s ease-in-out infinite;
+}
+
+/* beda delay */
+.polaroid:nth-child(2) { animation-delay: 1s; }
+.polaroid:nth-child(3) { animation-delay: 2s; }
+.polaroid:nth-child(4) { animation-delay: 3s; }
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  100% { transform: translateY(0px) rotate(-2deg); }
+}
+
+.polaroid img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* LOVE */
+.love {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fallLove linear forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@keyframes fallLove {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  width: 150px; /* lebar label biar sejajar */
+  font-weight: bold;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 8px;
+}

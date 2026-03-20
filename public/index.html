@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Untuk Kamu 💌</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <audio id="bgMusic" loop preload="auto">
+      <source src="./ssstik.io_1773997425147.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- OPENING (LOGIN STYLE) -->
+    <div id="opening" class="page">
+      <div class="container">
+        <h2>Silahkan isi data diri anda</h2>
+
+        <div class="form-group">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" placeholder="Masukkan Nama Kamu" />
+        </div>
+
+        <div class="form-group">
+          <label for="Alamat">Alamat</label>
+          <input type="text" id="alamat" />
+        </div>
+
+        <div class="form-group">
+          <label for="ttl">Tanggal Lahir</label>
+          <input type="date" id="ttl" />
+        </div>
+
+        <button onclick="startSlides()">Masuk</button>
+      </div>
+    </div>
+
+    <!-- PERTANYAAN -->
+    <div id="slides" class="page">
+      <div class="container">
+        <h2 id="question"></h2>
+        <textarea id="answer" placeholder="Tulis jawaban kamu..."></textarea>
+        <p id="warning" style="color: red; font-size: 14px"></p>
+        <button onclick="nextQuestion()">Next ➡️</button>
+      </div>
+    </div>
+
+    <!-- GALERI SCROLL -->
+    <div id="gallery" class="page gallery-scroll" onclick="showPopup()">
+      <div class="polaroid">
+        <img src="images/1.jpeg" />
+      </div>
+      <div class="polaroid">
+        <img src="images/2.jpeg" />
+      </div>
+      <div class="polaroid">
+        <img src="images/3.jpeg" />
+      </div>
+      <div class="polaroid">
+        <img src="images/4.jpeg" />
+      </div>
+    </div>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup hidden">
+      <div class="container">
+        <h2>Happy Eid Mubarak 🤍</h2>
+        <p>Minal Aidzin Wal faidzin Sayangkuu cintakuuu</p>
+        <p>aku minta maaf lahir dan batin yaa</p>
+        <p>
+          mungkinnn selamaa iniii, akuuu banyaa salah e ke kamuu. akuu sek belum
+          bisaa jadi sng terbaik gawe kamuu. maaff nek aku sek sukaaa nggarai
+          kamu bingung dengan sikapku, moodku yang gajelas inii. yangg tiba
+          tibaa ga mood, tiba tiba prengat prengut, tiba tiba maraaa sampee
+          menengno kamuu. maaf semisal ada sikap atau sifatku sng nggarai kamu
+          capee, nggarai kamuu kesel, nggarai kamu muakk nng akuu. Terimakasiii
+          kamuu selaluuu mengusahakan apa yang akuu mauu. terimakasii ws mauu di
+          repotii akuu. terimakasii kamuuu selaluu baik mbee akuuu. terimakasii
+          kamuu wess mau mencintaii perempuan yang banyak kurangnya inii dengann
+          cinta yang kamu punyaa yaa sayanggg.
+        </p>
+        <p>
+          Semogaa kedepan ee kita tetep bareng bareng yaaaa. nek adaa masalahh,
+          atau ada sng kamu ga suka dari akuuu, bilango yaaa. tuntun akuu jadii
+          perempuann sng kamu mauu.
+        </p>
+        <p>Sehat sehatt sayanggkuuuu. Akuu sayanggg kamuuuuu🫶🤍</p>
+        <button onclick="closePopup()">Lanjut</button>
+      </div>
+    </div>
+
+    <!-- THR -->
+    <div id="thr" class="page">
+      <div class="container">
+        <h2>Klik button di bawah ini</h2>
+        <button onclick="sendData()">Kirim Jawaban 💌</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div id="thankPopup" class="popup hidden">
+      <div class="content">
+        <h2>kiww cintakuuu</h2>
+        <p>Okeyy makasii Sayangggg, Wopyuuu🫰🤍</p>
+        <button onclick="backToLogin()">OK</button>
+      </div>
+    </div>
+  </body>
+</html>
